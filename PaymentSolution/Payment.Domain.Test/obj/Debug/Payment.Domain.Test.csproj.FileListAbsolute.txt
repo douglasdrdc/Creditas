@@ -1,0 +1,13 @@
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\obj\Debug\Payment.Domain.Test.csprojResolveAssemblyReference.cache
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Payment.Domain.Test.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Payment.Domain.Test.pdb
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Castle.Core.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Moq.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Payment.Domain.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Payment.Domain.pdb
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Castle.Core.xml
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Moq.pdb
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\bin\Debug\Moq.xml
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\obj\Debug\Payment.Domain.Test.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain.Test\obj\Debug\Payment.Domain.Test.pdb

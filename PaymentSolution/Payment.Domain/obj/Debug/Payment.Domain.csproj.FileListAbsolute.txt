@@ -1,0 +1,6 @@
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain\obj\Debug\Payment.Domain.csprojResolveAssemblyReference.cache
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain\bin\Debug\Payment.Domain.dll.config
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain\bin\Debug\Payment.Domain.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain\bin\Debug\Payment.Domain.pdb
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain\obj\Debug\Payment.Domain.dll
+D:\ProjetosGit\Creditas\PaymentSolution\Payment.Domain\obj\Debug\Payment.Domain.pdb
