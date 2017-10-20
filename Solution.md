@@ -1,7 +1,7 @@
 ﻿
-#Desafio Backend Software Engineer - Creditas
+# Desafio Backend Software Engineer - Creditas
 
-###Candidato: Douglas Campos
+### Candidato: Douglas Campos
 ----------
 ### <i class="icon-file"></i> Proposta
 Visando mitigar grandes modificações no processo de inclusão/remoção de novas regras de envio e processamento, este protótipo propõe a aplicação do Design Pattern “Factory Method” trazendo como principal vantagem à facilidade no processo de inclusão de novas implementações de envio/processamento e eliminando a necessidade de alteração do código existente.
