@@ -17,12 +17,12 @@ Para facilitar o processo de implementação de Pagamento, foi aplicado o Design
 
 ### <i class="icon-pencil"></i>Passos realizados
 
-Criação da Interface PaymentFactory
+#### Criação da Interface PaymentFactory
 :   Foi definida uma interface “PaymentFactory” que realiza a criação de “IPayment” através do método “Create”, porem delega a tarefa de implementação para as subclasses;
 
 ----------
 
-Implementações da Interface PaymentFactory
+#### Implementações da Interface PaymentFactory
 :   Cada Factory que implementa a “PaymentFactory” realiza sua própria criação de “IPayment”, sendo elas: 
 
 > - PaymentBookFactory
@@ -32,12 +32,12 @@ Implementações da Interface PaymentFactory
 
 ----------
 
-Criação da Interface IPayment
+#### Criação da Interface IPayment
 :   Para facilitar o processo de utilização e padronização de Pagamentos foi criado a interface “IPayment”;
 
 ----------
 
-Implementações da Interface IPayment
+#### Implementações da Interface IPayment
 :   Realizado a criação de “IPayment” através da Factory correspondente, temos então a implementação das classes concretas sendo elas:
 
 > - PaymentBook
@@ -48,7 +48,7 @@ Implementações da Interface IPayment
 ----------
 
 
-### <i class="icon-pencil"></i>Conclusão
+#### <i class="icon-pencil"></i>Conclusão
 
 > Baseado nesta estrutura é possível realizar a inclusão de novos itens de Pagamento simplesmente incluindo uma classe “Factory” e uma classe “Concreta” para cada novo item desejado. 
 > 
