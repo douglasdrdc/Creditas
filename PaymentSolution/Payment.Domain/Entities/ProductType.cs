@@ -8,9 +8,10 @@ namespace Payments.Domain.Entities
 {
     public enum ProductType
     {
-        Physical = 0,
-        Book = 1,
-        Digital = 2,
-        Membership = 3
+		None = 0,
+        Physical = 1,
+        Book = 2,
+        Digital = 3,
+        Membership = 4
     }
 }

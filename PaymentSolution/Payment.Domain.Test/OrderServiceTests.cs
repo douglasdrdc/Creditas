@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using Payments.Domain.Entities;
 using Payments.Domain.Services;
 using System;
@@ -8,34 +9,35 @@ namespace Payment.Domain.Test
     [TestClass]
     public class OrderServiceTests
     {
-        public Customer CustomerTest { get; set; }
-        public Order OrderTest { get; set; }
-        public OrderService Service { get; set; }
+        public Customer _customer { get; set; }
+        public Order _order { get; set; }
+        public OrderService _service { get; set; }
 
         [TestInitialize]
         public void Initialize()
         {
-            CustomerTest = new Customer()
+            _customer = new Customer()
             {
                 FirstName = "José",
                 LastName = "da Silva",
                 Email = "jose.silva@teste.com.br"
             };
 
-            OrderTest = new Order()
+            _order = null;
+            _order = new Order()
             {
-                Customer = CustomerTest,
+                Customer = _customer,
                 Address = new Address() { ZipCode = "45678-979" }
             };
 
-            Service = new OrderService();
+            _service = new OrderService();            
         }
 
         [TestMethod]        
         public void AllowsInclusionOfNewOrderBookSuccessfully()
         {
-            OrderTest.AddProduct(new Product() { Name = "Awesome book", Type = ProductType.Book });
-            Guid paymentAuthorizationNumber = Service.ProcessOrder(OrderTest);
+            _order.AddProduct(new Product() { Name = "Awesome book", Type = ProductType.Book });
+            Guid paymentAuthorizationNumber = _service.ProcessOrder(_order);
 
             Assert.AreNotEqual(Guid.Empty, paymentAuthorizationNumber);
         }
@@ -43,8 +45,8 @@ namespace Payment.Domain.Test
         [TestMethod]
         public void AllowsInclusionOfNewOrderDigitalSuccessfully()
         {
-            OrderTest.AddProduct(new Product() { Name = "Pirates of valley silicon", Type = ProductType.Digital });
-            Guid paymentAuthorizationNumber = Service.ProcessOrder(OrderTest);
+            _order.AddProduct(new Product() { Name = "Pirates of valley silicon", Type = ProductType.Digital });
+            Guid paymentAuthorizationNumber = _service.ProcessOrder(_order);
 
             Assert.AreNotEqual(Guid.Empty, paymentAuthorizationNumber);
         }
@@ -52,8 +54,8 @@ namespace Payment.Domain.Test
         [TestMethod]
         public void AllowsInclusionOfNewOrderMembershipSuccessfully()
         {
-            OrderTest.AddProduct(new Product() { Name = "Book Signing Club", Type = ProductType.Membership });
-            Guid paymentAuthorizationNumber = Service.ProcessOrder(OrderTest);
+            _order.AddProduct(new Product() { Name = "Book Signing Club", Type = ProductType.Membership });
+            Guid paymentAuthorizationNumber = _service.ProcessOrder(_order);
 
             Assert.AreNotEqual(Guid.Empty, paymentAuthorizationNumber);
         }
@@ -61,10 +63,49 @@ namespace Payment.Domain.Test
         [TestMethod]
         public void AllowsInclusionOfNewOrderPhysicalSuccessfully()
         {
-            OrderTest.AddProduct(new Product() { Name = "Johnnie Walker Honey Whiskey", Type = ProductType.Physical });
-            Guid paymentAuthorizationNumber = Service.ProcessOrder(OrderTest);
+            _order.AddProduct(new Product() { Name = "Johnnie Walker Honey Whiskey", Type = ProductType.Physical });
+            Guid paymentAuthorizationNumber = _service.ProcessOrder(_order);
 
             Assert.AreNotEqual(Guid.Empty, paymentAuthorizationNumber);
+        }
+
+        [TestMethod]
+        public void RefuseInclusionOfNewOrderWithoutProductType()
+        {
+            string messageExpected = "Can not include new order without product type.";
+            try
+            {
+                _order.AddProduct(new Product() { Name = "Johnnie Walker Honey Whiskey" });
+                Guid paymentAuthorizationNumber = _service.ProcessOrder(_order);
+                Assert.Fail(string.Format("The following message was expected: {0}", messageExpected));
+            }
+            catch (ApplicationException ex)
+            {
+                Assert.AreEqual(ex.Message, messageExpected);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [TestMethod]
+        public void RefuseInclusionOfNewOrderNull()
+        {
+            string messageExpected = "Can not include new order null.";
+            try
+            {                
+                Guid paymentAuthorizationNumber = _service.ProcessOrder(null);
+                Assert.Fail(string.Format("The following message was expected: {0}", messageExpected));
+            }
+            catch (ApplicationException ex)
+            {
+                Assert.AreEqual(ex.Message, messageExpected);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 

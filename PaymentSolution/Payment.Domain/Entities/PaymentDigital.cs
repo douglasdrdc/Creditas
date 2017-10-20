@@ -19,6 +19,8 @@ namespace Payments.Domain.Entities
 
         private void SendEmailPurchaseDescription(PromoCode promoCode)
         {
+            string message = string.Format("You won a discount of ${0} on your next purchase", 
+                promoCode.DiscountValue.ToString("#0.00"));
             return;
         }
     }

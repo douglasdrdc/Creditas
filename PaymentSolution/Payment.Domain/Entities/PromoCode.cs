@@ -4,12 +4,12 @@ namespace Payments.Domain.Entities
 {
     public class PromoCode
     {
-        private Customer Customer;
-        private Guid AuthenticationCode;
-        private bool AlreadyUsed;
-        private DateTime InitialDate;
-        private DateTime DueDate;
-        private decimal DiscountValue;
+        public Customer Customer;
+        public Guid AuthenticationCode;
+        public bool AlreadyUsed;
+        public DateTime InitialDate;
+        public DateTime DueDate;
+        public decimal DiscountValue;
 
         public static PromoCode Create(Customer customer, decimal discountValue)
         {

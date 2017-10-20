@@ -17,7 +17,8 @@ namespace Payments.Domain.Entities
         }  
         
         private void GenerateShippingLabel()
-        {            
+        {
+            string message = "This is Tax-exempt item as provided in the Constitution Art. 150, VI, d.";  
             return;
         }
     }
